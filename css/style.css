@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+:root{
+    --primary-color: #00fafa;
+    --secondary-color: #f8faf8;
+    --lose-color: rgb(255, 41, 41);
+    --win-color: #00e300;
+    --dark-color: black;
+    --gray-color: #cad5d5;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Balsamiq Sans', cursive;
+    line-height: 2rem;
+    background: var(--dark-color);
+    color: var(--primary-color);
+}
+
+.container{
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 10px;
+    vertical-align: middle;
+}
+
+.restart-btn{
+    display: none;
+    background: var(--dark-color);
+    color: var(--primary-color);
+    padding: 0.4rem 1.3rem;
+    border-color: var(--primary-color);
+    border-style: solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.restart-btn:hover{
+    background: var(--primary-color);
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+.header{
+    text-align: center;
+    margin: 1 rem 0;
+}
+
+.header h1{
+    margin-bottom: 1.5rem;
+}
+
+.score{
+    max-width: 600px;
+    margin: auto;
+    padding: 1.3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.score p{
+    border-style: solid;
+    border-color: var(--primary-color);
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+
+.choice{
+    padding: 10px;
+    margin-top: 10px;
+}
+.choice:hover{
+    color: yellow;
+}
+
+@media (max-width: 700px) {
+    .choice{
+        font-size: 110px;
+    }
+}
+
+@media (max-width: 600px) {
+    .choice{
+        font-size: 80px;
+    }
+}
+
+

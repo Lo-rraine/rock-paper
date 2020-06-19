@@ -1,0 +1,67 @@
+:root{
+    --primary-color: #00fafa;
+    --secondary-color: #f8faf8;
+    --lose-color: crimson;
+    --win-color: #00e300;
+    --dark-color: black;
+    --gray-color: #cad5d5;
+     
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(183, 227, 235, 0.6);
+}
+
+.modal-content{
+    background: var(--dark-color);
+    font-family: inherit;
+    text-align: center;
+    margin: 10% auto;
+    width: 350px;
+    border-radius: 10px;
+    border-color: var(--primary-color);
+    border-style: solid;
+    animation-name: modalopen;
+    animation-duration: 1s;
+    padding: 0.4rem;
+}
+
+.modal-content h1{
+    margin-bottom: 1rem;
+}
+
+.modal-content p{
+     font-size: 1.2rem;
+     margin-top: 1rem;
+}
+
+.text-win{
+    color: var(--win-color);
+    
+}
+
+.text-lose{
+    color: var(--lose-color);
+}
+
+@keyframes modalopen {
+    from{ 
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+
+
+

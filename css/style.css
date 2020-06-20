@@ -87,14 +87,14 @@ body{
 
 @media (min-width: 650px) {
     .choice{
-        font-size: 110px;
+        font-size: 30px;
     }
 }
 
 
 @media (max-width: 651px) {
     .choice{
-        font-size: 80px;
+        font-size: 30px;
     }
 }
 

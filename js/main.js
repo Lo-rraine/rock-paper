@@ -112,7 +112,7 @@ function showWinner(winner, computerChoice) {
 function clearModal(e) {
     if (e.target === modal) {
         modal.style.display = 'none';
-        restart.style.display = 'none';
+       
     }
 }
 

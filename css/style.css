@@ -85,6 +85,12 @@ body{
     color: yellow;
 }
 
+@media (min-width: 650px) {
+    .choice{
+        font-size: 110px;
+    }
+}
+
 
 @media (max-width: 651px) {
     .choice{

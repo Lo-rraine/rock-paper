@@ -24,7 +24,7 @@ function play(e) {
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
     //console.log(playerChoice, computerChoice, winner);
-    showWinner(winner, computerChoice);
+    showWinner(winner, computerChoice, playerChoice);
 }
 
 
@@ -48,7 +48,7 @@ function getWinner(p, c) {
         return 'draw';
     }
     else if (p === 'rock') {
-        if (c === "paper") {
+        if (c === 'paper') {
             return 'computer';
         }
         else {
@@ -62,7 +62,7 @@ function getWinner(p, c) {
             return 'player';
         }
     }
-    else if (p === "scissor") {
+    else if (p === 'scissors') {
         if (c === 'rock') {
             return 'computer';
         } else {
@@ -72,7 +72,7 @@ function getWinner(p, c) {
     
 }
 
-function showWinner(winner, computerChoice) {
+function showWinner(winner, computerChoice, playerChoice) {
     if (winner === 'player') {
         //this will increment if the player wins
         scoreboard.player++;
@@ -80,7 +80,8 @@ function showWinner(winner, computerChoice) {
         //output the modal result and put in info
         result.innerHTML = `
         <h1 class="text-win">You Win!</h1>
-        <p>Computer chose ${computerChoice}</i>
+        <p>You chose ${playerChoice}</p>
+        <p>Lorraine chose ${computerChoice}</i>
         <i class="fas fa-hand-${computerChoice} fa-10x"></i>
         `;
     } else if (winner === 'computer') {
@@ -90,20 +91,22 @@ function showWinner(winner, computerChoice) {
         //output the modal result and put in info
         result.innerHTML = `
         <h1 class="text-lose">You Lose!</h1>
-        <p>Computer chose ${computerChoice}</i>
+        <p>You chose ${playerChoice}</p>
+        <p>Lorraine chose ${computerChoice}</i>
         <i class="fas fa-hand-${computerChoice} fa-10x"></i>
         `;
     } else {
         result.innerHTML = `
         <h1>It's A Draw</h1>
-        <p>Computer chose ${computerChoice}</i>
+        <p>You chose ${playerChoice}</p>
+        <p>Lorraine chose ${computerChoice}</i>
         <i class="fas fa-hand-${computerChoice} fa-10x"></i>
         `;
     }
 
     score.innerHTML = `
-<p>Player: ${scoreboard.player}</p>
-<p>Computer: ${scoreboard.computer} </p>
+<p>You: ${scoreboard.player}</p>
+<p>Lorraine: ${scoreboard.computer} </p>
 `;
     
     modal.style.display = 'block';
@@ -112,8 +115,16 @@ function showWinner(winner, computerChoice) {
 function clearModal(e) {
     if (e.target === modal) {
         modal.style.display = 'none';
-        restart.style.display = 'none';
     }
+}
+
+function restartGame() {
+    scoreboard.player = 0;
+    scoreboard.computer = 0;
+    score.innerHTML = `
+    <p>You: 0</p>
+    <p>Lorraine: 0</p>
+    `;
 }
 
 
@@ -126,3 +137,4 @@ function clearModal(e) {
 choices.forEach(choice => choice.addEventListener('click', play));
 //To close the modal
 window.addEventListener('click', clearModal);
+restart.addEventListener('click', restartGame)

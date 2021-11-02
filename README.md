@@ -10,5 +10,5 @@ cd rock-paper
 npm serve i
 serve 
 ```
-You should see a serving press on the link and your rock-paper-scissors game will run locally.
+You should see a `serving` press on the link and your rock-paper-scissors game will run locally.
 Have fun 😄
